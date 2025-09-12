@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/sections/navbar/Navbar";
 
 export const metadata: Metadata = {
   title: "DevHance | Don't just list your skills. Prove them.",
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col gap-25">{children}</body>
+      <body className="flex flex-col items-center gap-25">
+        <Navbar />
+        <main>{children}</main>
+      </body>
     </html>
   );
 }

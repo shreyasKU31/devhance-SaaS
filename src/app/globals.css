@@ -14,11 +14,12 @@
 }
 body {
   background: var(--bg);
-  color: var(--foreground);
+  color: var(--white);
   font-family: "Lexend", Helvetica, sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-size: 1rem;
 }
 
 h1 {
@@ -44,5 +45,9 @@ p {
 }
 
 .brand {
+  background: var(--gradient);
+}
+
+.primary {
   background: var(--gradient);
 }
