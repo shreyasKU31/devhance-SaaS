@@ -1,26 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Syne:wght@400..800&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #0d1117;
+  --white: #ffffff;
+  --paragraph: #d1d5db;
+  --gradient: linear-gradient(
+    145deg,
+    rgba(192, 132, 252, 1) 0%,
+    rgba(34, 211, 238, 1) 50%,
+    rgba(74, 222, 128, 1) 100%
+  );
 }
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
+  background: var(--bg);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lexend", Helvetica, sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-family: "Syne", Helvetica, sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 90px;
+}
+h2 {
+  font-family: "Syne", Helvetica, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 48px;
+}
+h3 {
+  font-family: "Syne", Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+p {
+  font-family: "Lexend", Helvetica, sans-serif;
+  color: var(--paragraph);
+}
+
+.brand {
+  background: var(--gradient);
 }
