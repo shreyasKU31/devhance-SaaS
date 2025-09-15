@@ -44,6 +44,18 @@ p {
   color: var(--paragraph);
 }
 
+@media (max-width: 768px) {
+  h1 {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
+@media (max-width: 360px) {
+  h1 {
+    font-size: 48px;
+    line-height: 48px;
+  }
+}
 .brand {
   background: var(--gradient);
 }
