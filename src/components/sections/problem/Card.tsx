@@ -20,9 +20,9 @@ const ProblemCard = ({
 // Reusable card for the "solution" section with a gradient border
 const SolutionCard = () => {
   return (
-    <div className="relative p-0.5 mt-8 rounded-xl brand">
-      <div className="flex items-center space-x-4 p-6 rounded-[10px] bg-gray-900 text-white">
-        <Code className="w-8 h-8 text-blue-400" />
+    <div className=" p-0.5 mt-8 rounded-xl brand">
+      <div className="flex items-center space-x-4 p-6 rounded-xl bg-gray-900 text-white">
+        <Code className=" text-blue-400" />
         <div>
           <h3 className="text-xl font-bold">Unified Project Story</h3>
           <p className="mt-1 text-sm text-gray-400">
@@ -37,8 +37,8 @@ const SolutionCard = () => {
 // Main component for the section
 const Card = () => {
   return (
-    <div className="w-full max-w-4xl mx-auto p-8">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div className="mx-auto p-8 bg-gray-900 border-2 border-gray-700 rounded-2xl mt-16 max-md:w-10/12">
+      <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
         <ProblemCard icon={Github} text="Code scattered" />
         <ProblemCard icon={Figma} text="Design isolated" />
         <ProblemCard icon={FileText} text="Docs hidden" />
