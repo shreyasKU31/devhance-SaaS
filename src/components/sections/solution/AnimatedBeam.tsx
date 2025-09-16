@@ -8,8 +8,6 @@ import GoogleDrive from "@/components/ui/icons/GoogleDrive";
 import GoogleDocs from "@/components/ui/icons/GoogleDocs";
 import Notion from "@/components/ui/icons/Notion";
 import WhatsUp from "@/components/ui/icons/WhatsUp";
-import Messenger from "@/components/ui/icons/Messenger";
-import { Figma } from "lucide-react";
 import Image from "next/image";
 
 const Circle = forwardRef<
@@ -48,9 +46,7 @@ export function AnimatedBeamDemo() {
     >
       <div className="flex size-full max-h-[200px] max-w-lg flex-col items-stretch justify-between gap-10">
         <div className="flex flex-row items-center justify-between">
-          <Circle ref={div1Ref}>
-            <GoogleDrive />
-          </Circle>
+          <Circle ref={div1Ref}></Circle>
           <Circle ref={div5Ref}>
             <GoogleDocs />
           </Circle>
@@ -68,7 +64,12 @@ export function AnimatedBeamDemo() {
             />
           </Circle>
           <Circle ref={div6Ref}>
-            <Figma />
+            <Image
+              width={100}
+              height={120}
+              src={"/icons/figma.png"}
+              alt="Figma Logo"
+            />
           </Circle>
         </div>
         <div className="flex flex-row items-center justify-between">
@@ -76,7 +77,7 @@ export function AnimatedBeamDemo() {
             <WhatsUp />
           </Circle>
           <Circle ref={div7Ref}>
-            <Messenger />
+            <GoogleDrive />
           </Circle>
         </div>
       </div>
