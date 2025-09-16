@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-col items-center gap-25">
         <Navbar />
-        <main>{children}</main>
+        <main className="flex flex-col gap-10 items-center">{children}</main>
       </body>
     </html>
   );
