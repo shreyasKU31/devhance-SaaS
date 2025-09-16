@@ -46,7 +46,14 @@ export function AnimatedBeamDemo() {
     >
       <div className="flex size-full max-h-[200px] max-w-lg flex-col items-stretch justify-between gap-10">
         <div className="flex flex-row items-center justify-between">
-          <Circle ref={div1Ref}></Circle>
+          <Circle ref={div1Ref}>
+            <Image
+              width={100}
+              height={120}
+              src={"/icons/github.png"}
+              alt="Github Logo"
+            />
+          </Circle>
           <Circle ref={div5Ref}>
             <GoogleDocs />
           </Circle>
