@@ -8,7 +8,7 @@ import Solution from "@/components/sections/solution/Solution";
 export default function Home() {
   return (
     <>
-      <main className="flex flex-col items-center px-16 max-md:px-6 gap-20 max-w-[1440px] m-auto">
+      <main className="flex flex-col items-center px-16 max-md:px-6 gap-20 max-w-[1440px] m-auto overflow-x-hidden">
         <Hero />
         <Problem />
         <Solution />
