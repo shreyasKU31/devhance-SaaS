@@ -15,9 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col items-center gap-25">
+      <body>
         <Navbar />
-        <main className="flex flex-col gap-10 items-center">{children}</main>
+        {children}
       </body>
     </html>
   );

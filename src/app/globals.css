@@ -5,6 +5,7 @@
   --bg: #0d1117;
   --white: #ffffff;
   --paragraph: #d1d5db;
+  --faq: #909090;
   --gradient: linear-gradient(
     145deg,
     rgba(192, 132, 252, 1) 0%,
@@ -42,6 +43,9 @@ h3 {
 p {
   font-family: "Lexend", Helvetica, sans-serif;
   color: var(--paragraph);
+}
+.p {
+  color: var(--faq);
 }
 
 @media (max-width: 768px) {
