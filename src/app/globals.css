@@ -49,11 +49,19 @@ p {
     font-size: 60px;
     line-height: 60px;
   }
+  h2 {
+    font-size: 36px;
+    line-height: 36px;
+  }
 }
 @media (max-width: 360px) {
   h1 {
     font-size: 48px;
     line-height: 48px;
+  }
+  h2 {
+    font-size: 28px;
+    line-height: 28px;
   }
 }
 .brand {
