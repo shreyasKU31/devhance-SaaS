@@ -1,0 +1,20 @@
+.animatedBrandBg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200vw;
+  height: 200vw;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  animation: rotateBg 6s linear infinite;
+  overflow: hidden;
+}
+
+@keyframes rotateBg {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
