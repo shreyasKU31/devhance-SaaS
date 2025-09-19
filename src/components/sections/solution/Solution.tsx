@@ -8,7 +8,7 @@ const Solution = () => {
     <section className="mt-10 flex flex-col gap-30">
       <div className="text-center">
         <h2>Unify Your Narrative. Build Trust.</h2>
-        <p className="mt-4">
+        <p className="mt-4 max-w-4xl">
           From chaos to clarity, DevHance transforms your scattered efforts into
           a compelling, unified story, establishing your credibility as the
           single source of truth.
