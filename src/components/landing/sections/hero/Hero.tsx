@@ -1,6 +1,6 @@
 "use client";
 import Buttons from "@/components/ui/Button";
-import ScrollDown from "@/components/sections/hero/scrollIcon/ScrollDown";
+import ScrollDown from "@/components/landing/sections/hero/scrollIcon/ScrollDown";
 import React from "react";
 import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
 import { motion } from "framer-motion";
