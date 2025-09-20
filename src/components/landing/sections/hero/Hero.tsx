@@ -1,8 +1,8 @@
 "use client";
-import Buttons from "@/components/ui/Button";
+import Buttons from "@/components/landing/ui/Button";
 import ScrollDown from "@/components/landing/sections/hero/scrollIcon/ScrollDown";
 import React from "react";
-import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
+import { LayoutTextFlip } from "@/components/landing/ui/layout-text-flip";
 import { motion } from "framer-motion";
 
 const Hero = () => {

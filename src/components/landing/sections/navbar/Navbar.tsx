@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import NavElements from "./NavElements";
-import Button from "@/components/ui/Button";
+import Button from "@/components/landing/ui/Button";
 import { Menu } from "lucide-react";
 
 const Navbar = () => {

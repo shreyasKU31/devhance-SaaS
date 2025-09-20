@@ -3,11 +3,11 @@
 import React, { forwardRef, useRef } from "react";
 
 import { cn } from "@/lib/utils";
-import { AnimatedBeam } from "@/components/ui/animated-beam";
-import GoogleDrive from "@/components/ui/icons/GoogleDrive";
-import GoogleDocs from "@/components/ui/icons/GoogleDocs";
-import Notion from "@/components/ui/icons/Notion";
-import WhatsUp from "@/components/ui/icons/WhatsUp";
+import { AnimatedBeam } from "@/components/landing/ui/animated-beam";
+import GoogleDrive from "@/components/landing/ui/icons/GoogleDrive";
+import GoogleDocs from "@/components/landing/ui/icons/GoogleDocs";
+import Notion from "@/components/landing/ui/icons/Notion";
+import WhatsUp from "@/components/landing/ui/icons/WhatsUp";
 import Image from "next/image";
 
 const Circle = forwardRef<

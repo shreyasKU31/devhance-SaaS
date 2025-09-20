@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import styles from "./style.module.css";
-import Buttons from "@/components/ui/Button";
+import Buttons from "@/components/landing/ui/Button";
 
 const CTA: FC = () => {
   return (
