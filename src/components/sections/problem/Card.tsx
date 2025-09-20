@@ -1,5 +1,6 @@
 import React from "react";
 import { Github, Figma, FileText, Youtube, Code } from "lucide-react";
+import styles from "./style.module.css";
 
 // Reusable card for the "problem" section
 const ProblemCard = ({
@@ -20,7 +21,7 @@ const ProblemCard = ({
 // Reusable card for the "solution" section with a gradient border
 const SolutionCard = () => {
   return (
-    <div className=" p-0.5 mt-8 rounded-xl brand">
+    <div className={`p-0.5 mt-8 rounded-xl brand ${styles.box}`}>
       <div className="flex items-center space-x-4 p-6 rounded-xl bg-gray-900 text-white">
         <Code className=" text-blue-400" />
         <div>
@@ -37,7 +38,7 @@ const SolutionCard = () => {
 // Main component for the section
 const Card = () => {
   return (
-    <div className="mx-auto p-8 bg-gray-900 border-2 border-gray-700 rounded-2xl mt-16 max-md:w-10/12">
+    <div className="mx-auto p-8 bg-gray-900 border-2 border-gray-700 rounded-2xl mt-20 max-md:w-10/12">
       <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
         <ProblemCard icon={Github} text="Code scattered" />
         <ProblemCard icon={Figma} text="Design isolated" />
