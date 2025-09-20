@@ -1,12 +1,10 @@
-// components/CtaSection.tsx
-
 import type { FC } from "react";
 import styles from "./style.module.css";
 import Buttons from "@/components/ui/Button";
 
 const CTA: FC = () => {
   return (
-    <section className="relative py-20 w-[100vw] h-[500px] text-center overflow-hidden flex flex-col items-center justify-center">
+    <section className="relative py-20 max-xl:w-[100vw]  max-xl:rounded-none w-full h-[500px] rounded-4xl text-center overflow-hidden flex flex-col items-center justify-center px-8">
       <div className={`brand ${styles.animatedBrandBg}`}></div>
 
       {/* Foreground Content */}
