@@ -3,28 +3,63 @@ import Buttons from "@/components/ui/Button";
 import ScrollDown from "@/components/sections/hero/scrollIcon/ScrollDown";
 import React from "react";
 import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
     <section className="pt-40 h-[100vh] text-center px-10 flex flex-col gap-16 items-center">
       <div className="flex flex-col gap-8 items-center">
-        <h1 className="pt-8">
-          Your Product has a <span>Story.</span> <br />
-          <motion.div className="relative mx-4 my-4 border-none flex flex-col items-center justify-center gap-4 text-center sm:mx-0 sm:mb-0 sm:flex-row">
+        <motion.h1
+          className="pt-8"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <motion.span
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
+          >
+            Your Product has a
+          </motion.span>{" "}
+          <motion.span
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.6, ease: "backOut" }}
+            className="inline-block text-brand"
+          >
+            Story.
+          </motion.span>
+          <br />
+          <motion.div
+            className="relative mx-4 my-4 border-none flex flex-col items-center justify-center gap-4 text-center sm:mx-0 sm:mb-0 sm:flex-row"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.7, ease: "easeOut" }}
+          >
             <LayoutTextFlip
               text=""
               words={["Tell It", "Prove It", "Ship It.", "Validate It."]}
             />
           </motion.div>
-        </h1>
-        <p className="max-w-4xl text-center">
+        </motion.h1>
+        <motion.p
+          className="max-w-4xl text-center"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2, duration: 0.7, ease: "easeOut" }}
+        >
           DevHance is the single source of truth for your build. We empower
           founders to connect their code, designs, and decisions into one
           compelling story that builds undeniable trust.
-        </p>
+        </motion.p>
       </div>
-      <div className="flex justify-center gap-8">
+      <motion.div
+        className="flex justify-center gap-8"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.5, duration: 0.7, ease: "easeOut" }}
+      >
         <Buttons
           text="Start Your Build Log"
           style="brand px-8 rounded-full flex items-center"
@@ -35,14 +70,23 @@ const Hero = () => {
             style="relative m-auto w-58 bg-gray-900 text-white rounded-full px-8 py-4 font-semibold "
           />
         </div>
-      </div>
-      <span className="text-[12px] text-gray-500">
+      </motion.div>
+      <motion.span
+        className="text-[12px] text-gray-500"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.8, duration: 0.7, ease: "easeOut" }}
+      >
         Trusted by the next generation of builders from Stanford, MIT, and Y
         Combinator
-      </span>
-      <div>
+      </motion.span>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2.1, duration: 0.7, ease: "easeOut" }}
+      >
         <ScrollDown />
-      </div>
+      </motion.div>
     </section>
   );
 };
