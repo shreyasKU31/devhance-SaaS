@@ -1,13 +1,22 @@
+"use client";
 import Buttons from "@/components/ui/Button";
 import ScrollDown from "@/components/sections/hero/scrollIcon/ScrollDown";
 import React from "react";
+import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
+import { motion } from "motion/react";
 
 const Hero = () => {
   return (
     <section className="pt-40 h-[100vh] text-center px-10 flex flex-col gap-16 items-center">
       <div className="flex flex-col gap-8 items-center">
         <h1 className="pt-8">
-          Your Product has a <span>Story.</span> <br /> <span>Tell It.</span>
+          Your Product has a <span>Story.</span> <br />
+          <motion.div className="relative mx-4 my-4 border-none flex flex-col items-center justify-center gap-4 text-center sm:mx-0 sm:mb-0 sm:flex-row">
+            <LayoutTextFlip
+              text=""
+              words={["Tell It", "Prove It", "Ship It.", "Validate It."]}
+            />
+          </motion.div>
         </h1>
         <p className="max-w-4xl text-center">
           DevHance is the single source of truth for your build. We empower
