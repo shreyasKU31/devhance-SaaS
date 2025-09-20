@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/sections/navbar/Navbar";
+import Footer from "@/components/sections/footer/Footer";
 
 export const metadata: Metadata = {
   title: "DevHance | Don't just list your skills. Prove them.",
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
