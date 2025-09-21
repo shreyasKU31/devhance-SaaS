@@ -40,10 +40,10 @@ const Footer = () => {
               <NavLink link="/#" label="Setting & Privacy" />
             </LinkGroup> */}
             <LinkGroup header="Quick Links">
-              <NavLink link="/#" label="Premium Support" />
-              <NavLink link="/#" label="Our Services" />
-              <NavLink link="/#" label="Know Our Team" />
-              <NavLink link="/#" label="Download App" />
+              <NavLink link="/#" label="Solution" />
+              <NavLink link="/#" label="Showcase" />
+              <NavLink link="/#" label="Features" />
+              <NavLink link="/#" label="Contact" />
             </LinkGroup>
 
             <div className="w-full px-4 sm:w-1/2 lg:w-3/12">
