@@ -2,7 +2,7 @@ import CTA from "@/components/landing/sections/cta/CTA";
 import Faq from "@/components/landing/sections/faq/Faq";
 import Hero from "@/components/landing/sections/hero/Hero";
 import Problem from "@/components/landing/sections/problem/Problem";
-import { AppleCardsCarouselDemo } from "@/components/landing/sections/showcase/Showcase";
+import { Showcase } from "@/components/landing/sections/showcase/Showcase";
 import Solution from "@/components/landing/sections/solution/Solution";
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
         <Hero />
         <Problem />
         <Solution />
-        <AppleCardsCarouselDemo />
+        <Showcase />
         <Faq />
         <CTA />
       </main>

@@ -14,6 +14,7 @@ import {
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
+import styles from "../sections/problem/style.module.css";
 
 interface CarouselProps {
   items: React.ReactElement[];
@@ -212,7 +213,7 @@ export const Card = ({
               exit={{ opacity: 0 }}
               ref={containerRef}
               layoutId={layout ? `card-${card.title}` : undefined}
-              className="relative font-['Syne'] z-[60] mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-white p-4 md:p-10 dark:bg-neutral-900"
+              className={`relative font-['Syne'] z-[60] mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-white p-4 md:p-10 dark:bg-neutral-900 ${styles.box}`}
             >
               <button
                 className="sticky top-4 right-0 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white"
@@ -228,7 +229,7 @@ export const Card = ({
               </motion.p>
               <motion.h2
                 layoutId={layout ? `title-${card.title}` : undefined}
-                className="mt-4 text-2xl font-['Syne'] font-semibold text-neutral-700 md:text-5xl dark:text-white"
+                className="mt-4 text-2xl font-['Syne'] font-semibold text-neutral-700 md:text-5xl dark:text-white brand p-4 rounded-2xl"
               >
                 {card.title}
               </motion.h2>
@@ -241,9 +242,9 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-[40rem] md:w-96 dark:bg-neutral-900"
+        className="relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-100 md:w-96 dark:bg-neutral-900 transition-all duration-300 hover:scale-105 hover:cursor-pointer"
       >
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/80 via-black-90 via-transparent to-transparent max-sm:bg-black/50" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/80 via-black-90 via-black-90 via-black-90 to-transparent max-sm:bg-black/50" />
         <div className="relative z-40 p-8">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
@@ -278,10 +279,7 @@ export const BlurImage = ({
 }: React.ImgHTMLAttributes<HTMLImageElement>) => {
   return (
     <img
-      className={cn(
-        "h-full w-full transition duration-300 grayscale-100 hover:scale-105 hover:grayscale-0",
-        className
-      )}
+      className={cn("h-full w-full transition duration-300", className)}
       src={src as string}
       width={width}
       height={height}
