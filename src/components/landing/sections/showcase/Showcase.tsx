@@ -21,7 +21,11 @@ export function Showcase() {
   };
 
   return (
-    <div ref={ref} className="w-full h-full py-20 text-center overflow-hidden">
+    <div
+      ref={ref}
+      id="showcase"
+      className="w-full h-full py-20 text-center overflow-hidden"
+    >
       {/* Animated Heading */}
       <motion.h2
         variants={sectionVariants}

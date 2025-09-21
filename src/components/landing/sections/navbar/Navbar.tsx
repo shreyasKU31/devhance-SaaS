@@ -11,8 +11,8 @@ const Navbar = () => {
     <header className="fixed w-full pt-6 px-4 z-50">
       <nav className="max-w-5xl m-auto rounded-full border backdrop-blur-2xl  border-white/20 flex justify-between px-8 py-4 items-center">
         <div className="flex gap-4 max-md:hidden">
-          <NavElements text={"Features"} />
-          <NavElements text={"Showcase"} />
+          <NavElements text={"Features"} url="/#solution" />
+          <NavElements text={"Showcase"} url="/#showcase" />
         </div>
         <Image
           width={180}
@@ -32,8 +32,8 @@ const Navbar = () => {
 
         {mobileView && (
           <div className="absolute top-20 py-8 left-0 bg-[var(--bg)] text-center w-full m-auto flex flex-col gap-4 ">
-            <NavElements text={"Features"} />
-            <NavElements text={"Showcase"} />
+            <NavElements text={"Features"} url="/#solution" />
+            <NavElements text={"Showcase"} url="/#showcase" />
             <Button text={"Sign-In"} style="primary px-8 py-2 rounded-full" />
           </div>
         )}

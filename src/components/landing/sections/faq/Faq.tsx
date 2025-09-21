@@ -30,7 +30,7 @@ const questions = [
 
 const Faq = () => {
   return (
-    <section>
+    <section id="faq">
       <div className="text-center">
         <h2>Have Questions? We've Got Answers.</h2>
         <p className="max-w-4xl mt-4">

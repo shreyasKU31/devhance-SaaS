@@ -13,6 +13,11 @@
     rgba(74, 222, 128, 1) 100%
   );
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--bg);
   color: var(--white);

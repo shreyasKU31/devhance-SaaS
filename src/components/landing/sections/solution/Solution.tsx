@@ -33,10 +33,13 @@ const ScrollFadeIn = ({ children }: { children: ReactNode }) => {
 // Your original component, now with animation wrappers
 const Solution = () => {
   return (
-    <section className="mt-10 flex flex-col gap-30">
+    <section id="solution" className="mt-10 flex flex-col gap-30">
       <ScrollFadeIn>
         <div className="text-center">
-          <h2>Unify Your Narrative. Build Trust.</h2>
+          <h2>
+            Unify Your <span className="textGrad ml-2">Narrative.</span> Build
+            <span className="textGrad ml-2">Trust.</span>
+          </h2>
           <p className="m-auto mt-4 max-w-4xl">
             From chaos to clarity, DevHance transforms your scattered efforts
             into a compelling, unified story, establishing your credibility as
