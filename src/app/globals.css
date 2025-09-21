@@ -72,6 +72,12 @@ p {
   background: var(--gradient);
 }
 
+.textGrad {
+  background-image: var(--gradient);
+  color: transparent;
+  background-clip: text;
+}
+
 .primary {
   background: var(--gradient);
 }
