@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import NavElements from "./NavElements";
 import Button from "@/components/landing/ui/Button";
 import { Menu } from "lucide-react";
+import { SignedOut, SignedIn, UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
   const [mobileView, setMobileView] = useState(false);
@@ -20,11 +21,16 @@ const Navbar = () => {
           src={"/DHLogo.png"}
           alt="DevHance Logo"
         />
-        <Button
-          text={"Sign-In"}
-          style="primary px-8 py-2 rounded-full max-md:hidden"
-          href="/sign-in"
-        />
+        <SignedOut>
+          <Button
+            text={"Sign-In"}
+            style="primary px-8 py-2 rounded-full max-md:hidden"
+            href="/sign-in"
+          />
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
 
         <Menu
           className="md:hidden"
