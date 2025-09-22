@@ -20,6 +20,7 @@ const CTA: FC = () => {
       <Buttons
         text="Become the Source of Truth"
         style="bg-black px-16 py-4 rounded-full mt-10"
+        href="/sign-in"
       />
     </section>
   );

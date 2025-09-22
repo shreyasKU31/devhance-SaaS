@@ -23,6 +23,7 @@ const Navbar = () => {
         <Button
           text={"Sign-In"}
           style="primary px-8 py-2 rounded-full max-md:hidden"
+          href="/sign-in"
         />
 
         <Menu
@@ -34,7 +35,11 @@ const Navbar = () => {
           <div className="absolute top-20 py-8 left-0 bg-[var(--bg)] text-center w-full m-auto flex flex-col gap-4 ">
             <NavElements text={"Features"} url="/#solution" />
             <NavElements text={"Showcase"} url="/#showcase" />
-            <Button text={"Sign-In"} style="primary px-8 py-2 rounded-full" />
+            <Button
+              text={"Sign-In"}
+              style="primary px-8 py-2 rounded-full"
+              href="/sign-in"
+            />
           </div>
         )}
       </nav>

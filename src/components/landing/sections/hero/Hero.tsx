@@ -63,11 +63,13 @@ const Hero = () => {
         <Buttons
           text="Start Your Build Log"
           style="brand px-8 rounded-full flex items-center"
+          href="/sign-in"
         />
         <div className="relative w-60 inline-block py-1 rounded-full brand">
           <Buttons
             text="View a Demo Project"
-            style="relative m-auto w-58 bg-gray-900 text-white rounded-full px-8 py-4 font-semibold "
+            style="relative m-auto w-58 bg-gray-900 text-white rounded-full px-8 py-4 font-semibold"
+            href="/sign-in"
           />
         </div>
       </motion.div>
