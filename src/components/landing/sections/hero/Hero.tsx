@@ -62,10 +62,10 @@ const Hero = () => {
       >
         <Buttons
           text="Start Your Build Log"
-          style="brand px-8 rounded-full flex items-center"
+          style="brand px-12 rounded-full flex items-center py-4 text-md font-bold"
           href="/sign-in"
         />
-        <div className="relative w-60 inline-block py-1 rounded-full brand">
+        <div className="relative w-60 py-1 rounded-full brand flex items-center justify-center">
           <Buttons
             text="View a Demo Project"
             style="relative m-auto w-58 bg-gray-900 text-white rounded-full px-8 py-4 font-semibold"
