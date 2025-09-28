@@ -52,7 +52,7 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel className="text-xl my-4">
-            Application
+            DevHance
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
