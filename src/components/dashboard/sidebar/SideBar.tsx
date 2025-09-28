@@ -1,3 +1,6 @@
+"use client"; // Required for client-side interactions like Link
+
+import Link from "next/link"; // Import the Link component
 import {
   LayoutDashboard,
   FileText,
@@ -30,13 +33,8 @@ const items = [
     icon: FileText,
   },
   {
-    title: "Analytics",
-    url: "/analytics",
-    icon: BarChart2,
-  },
-  {
     title: "Public View",
-    url: "/[username]", // This would need to be dynamically generated
+    url: "/public-view", //[username]
     icon: Share2,
   },
   {
@@ -62,10 +60,11 @@ export function AppSidebar() {
                   className="mb-2 rounded-xl hover:bg-gray-800"
                 >
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
+                    {/* Replace the `<a>` tag with `Link` */}
+                    <Link href={item.url} className="flex items-center">
+                      <item.icon className="w-5 h-5 mr-3" />
                       <span className="text-base">{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
