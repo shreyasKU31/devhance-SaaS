@@ -1,7 +1,4 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import Navbar from "@/components/landing/sections/navbar/Navbar";
-import Footer from "@/components/landing/sections/footer/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
@@ -10,16 +7,16 @@ export const metadata: Metadata = {
     'DevHance is a portfolio platform designed for developers, designers, and builders to prove their true skills. Traditional resumes and GitHub profiles show what you built, but not why. DevHance bridges this "context gap." Our guided editor helps you transform your projects into compelling stories, detailing your technical decisions, trade-offs, and the real-world impact of your work. The result is a professional, shareable portfolio that showcases your applied skill, not just your keywords.',
 };
 
-export default function LandingLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <ClerkProvider>
-      <Navbar />
-      {children}
-      <Footer />
+      <html lang="en">
+        <body>{children}</body>
+      </html>
     </ClerkProvider>
   );
 }
