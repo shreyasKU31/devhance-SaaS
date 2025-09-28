@@ -22,11 +22,14 @@ const Navbar = () => {
           alt="DevHance Logo"
         />
         <SignedOut>
-          <Button
-            text={"Sign-In"}
-            style="primary px-8 py-2 rounded-full max-md:hidden"
-            href="/sign-in"
-          />
+          <div className="flex gap-4 items-center">
+            <Button text={"Sign-In"} style="max-md:hidden" href="/sign-in" />
+            <Button
+              text={"Register"}
+              style="primary px-8 py-2 rounded-full max-md:hidden"
+              href="/sign-up"
+            />
+          </div>
         </SignedOut>
         <SignedIn>
           <UserButton />
