@@ -1,13 +1,7 @@
 "use client"; // Required for client-side interactions like Link
 
 import Link from "next/link"; // Import the Link component
-import {
-  LayoutDashboard,
-  FileText,
-  BarChart2,
-  Share2,
-  Settings,
-} from "lucide-react";
+import { LayoutDashboard, FileText, Share2, Settings } from "lucide-react";
 
 import {
   Sidebar,
