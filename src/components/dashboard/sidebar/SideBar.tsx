@@ -2,10 +2,10 @@
 
 import Link from "next/link"; // Import the Link component
 import { LayoutDashboard, FileText, Share2, Settings } from "lucide-react";
-
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -13,6 +13,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 
 // Menu items.
 const items = [
@@ -66,6 +67,13 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <SidebarFooter>
+        <div className="mb-4 flex w-full items-end justify-end p-4">
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+        </div>
+      </SidebarFooter>
     </Sidebar>
   );
 }
