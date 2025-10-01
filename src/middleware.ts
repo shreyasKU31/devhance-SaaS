@@ -4,25 +4,17 @@ import type { NextRequest } from "next/server";
 
 const isPublicRoute = createRouteMatcher(["/", "/sign-in(.*)", "/sign-up(.*)"]);
 
-export default clerkMiddleware(async (auth, req) => {
+export default clerkMiddleware((auth, req: NextRequest) => {
+  // First, handle authentication
   if (!isPublicRoute(req)) {
-    await auth.protect();
+    auth.protect();
   }
-});
 
-export const config = {
-  matcher: [
-    // Skip Next.js internals and all static files, unless found in search params
-    "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
-    // Always run for API routes
-    "/(api|trpc)(.*)",
-  ],
-};
-
-export function middleware(req: NextRequest) {
+  // Create a response object to add headers
   const res = NextResponse.next();
 
-  res.headers.set("Access-Control-Allow-Origin", "*"); // or specific origin
+  // Add your CORS headers
+  res.headers.set("Access-Control-Allow-Origin", "*");
   res.headers.set(
     "Access-Control-Allow-Methods",
     "GET,POST,PUT,DELETE,OPTIONS"
@@ -32,9 +24,18 @@ export function middleware(req: NextRequest) {
     "Content-Type, Authorization"
   );
 
+  // Handle OPTIONS requests for pre-flight checks
   if (req.method === "OPTIONS") {
     return new NextResponse(null, { status: 204, headers: res.headers });
   }
 
+  // Return the response with the added headers
   return res;
-}
+});
+
+export const config = {
+  matcher: [
+    "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
+    "/(api|trpc)(.*)",
+  ],
+};
