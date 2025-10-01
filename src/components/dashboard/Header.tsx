@@ -7,11 +7,13 @@ const Header = () => {
   const { user } = useUser();
   return (
     <header className="p-8 border-b-2 border-gray-700">
-      <h1 className="text-2xl flex items-center gap-4">
+      <h1 className="flex items-center gap-4">
         Welcome,
-        <SparklesText className="inline-block items-center">
-          {user?.username}
-        </SparklesText>
+        <span>
+          <SparklesText className="inline-block items-center">
+            {user?.username}
+          </SparklesText>
+        </span>
       </h1>
     </header>
   );
