@@ -1,6 +1,7 @@
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/dashboard/sidebar/SideBar";
 import "./globals.css";
+import Header from "@/components/dashboard/Header";
 
 export default function DashboardLayout({
   children,
@@ -16,7 +17,10 @@ export default function DashboardLayout({
             <SidebarTrigger className="flex flex-col justify-between h-full px-8 py-8" />
           </SidebarProvider>
         </aside>
-        <main className="overflow-y-auto w-full">{children}</main>
+        <main className="overflow-y-auto w-full">
+          <Header />
+          {children}
+        </main>
       </div>
     </>
   );
