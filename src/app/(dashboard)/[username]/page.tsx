@@ -1,7 +1,7 @@
 import React from "react";
 
-const page = ({ params }: { params: { username: string } }) => {
-  const { username } = params;
+const page = async ({ params }: { params: { username: string } }) => {
+  const { username } = await params;
   return <div>{username}</div>;
 };
 
