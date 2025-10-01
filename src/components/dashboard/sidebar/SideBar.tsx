@@ -14,33 +14,34 @@ import {
 } from "@/components/ui/sidebar";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-
-// Menu items.
-const items = [
-  {
-    title: "Dashboard",
-    url: "/dashboard",
-    icon: LayoutDashboard,
-  },
-  {
-    title: "My Stories",
-    url: "/stories",
-    icon: FileText,
-  },
-  {
-    title: "Public View",
-    url: "/public-view", //[username]
-    icon: Share2,
-  },
-  {
-    title: "Settings",
-    url: "/settings",
-    icon: Settings,
-  },
-];
+import { useUser } from "@clerk/nextjs";
 
 export function AppSidebar() {
   const pathname = usePathname();
+  const { user } = useUser();
+  // Menu items.
+  const items = [
+    {
+      title: "Dashboard",
+      url: "/dashboard",
+      icon: LayoutDashboard,
+    },
+    {
+      title: "My Stories",
+      url: "/stories",
+      icon: FileText,
+    },
+    {
+      title: "Public View",
+      url: `/${user?.username}`, //[username]
+      icon: Share2,
+    },
+    {
+      title: "Settings",
+      url: "/settings",
+      icon: Settings,
+    },
+  ];
   return (
     <Sidebar variant="inset">
       <SidebarContent>
