@@ -5,7 +5,6 @@ import { LayoutDashboard, FileText, Share2, Settings } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -13,6 +12,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
 
 // Menu items.
 const items = [
@@ -39,6 +40,7 @@ const items = [
 ];
 
 export function AppSidebar() {
+  const pathname = usePathname();
   return (
     <Sidebar variant="inset">
       <SidebarContent>
@@ -55,7 +57,15 @@ export function AppSidebar() {
                 >
                   <SidebarMenuButton asChild>
                     {/* Replace the `<a>` tag with `Link` */}
-                    <Link href={item.url} className="flex items-center">
+                    <Link
+                      href={item.url}
+                      className={clsx(
+                        "text-sm group flex p-3 w-full items-center font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-lg transition",
+                        pathname === item.url
+                          ? "text-white bg-white/10"
+                          : "text-zinc-400"
+                      )}
+                    >
                       <item.icon className="w-5 h-5 mr-3" />
                       <span className="text-base">{item.title}</span>
                     </Link>
