@@ -11,10 +11,10 @@ export default function DashboardLayout({
   return (
     <>
       <div className="flex h-screen">
-        <aside>
-          <SidebarProvider>
+        <aside className="">
+          <SidebarProvider className="pr-4 h-full">
             <AppSidebar />
-            <SidebarTrigger />
+            <SidebarTrigger className="flex flex-col justify-between h-full px-8 py-8" />
           </SidebarProvider>
         </aside>
         <main className="overflow-y-auto w-full">{children}</main>
