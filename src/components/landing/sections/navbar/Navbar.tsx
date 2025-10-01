@@ -5,6 +5,7 @@ import NavElements from "./NavElements";
 import Button from "@/components/landing/ui/Button";
 import { Menu } from "lucide-react";
 import { SignedOut, SignedIn, UserButton } from "@clerk/nextjs";
+import Buttons from "@/components/landing/ui/Button";
 
 const Navbar = () => {
   const [mobileView, setMobileView] = useState(false);
@@ -32,7 +33,11 @@ const Navbar = () => {
           </div>
         </SignedOut>
         <SignedIn>
-          <UserButton />
+          <Buttons
+            text="Dashboard"
+            style="brand py-2 px-6 rounded-full"
+            href="/dashboard"
+          />
         </SignedIn>
 
         <Menu
