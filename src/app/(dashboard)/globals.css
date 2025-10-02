@@ -68,3 +68,13 @@ body {
   initial-value: 0deg;
   inherits: false;
 }
+.brand,
+.primary {
+  background: var(--gradient);
+}
+
+.textGrad {
+  background-image: var(--gradient);
+  color: transparent;
+  background-clip: text;
+}
