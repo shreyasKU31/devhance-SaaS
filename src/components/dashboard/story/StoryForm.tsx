@@ -3,8 +3,8 @@ import { InputWithLabel } from "../basic/Input";
 export function StoryForm() {
   return (
     <div className="p-8">
-      <h1 className="text-3xl font-bold">Create a New Story</h1>
-      <p className="text-lg text-muted-foreground mt-2">
+      <h1 className="text-4xl font-bold font-['Syne']">Create a New Story</h1>
+      <p className="text-xl text-muted-foreground mt-2">
         Tell us about a project you've worked on.
       </p>
 
@@ -12,8 +12,9 @@ export function StoryForm() {
       <form className="mt-8 space-y-6">
         <div>
           <InputWithLabel
-            label="Title of the project."
+            label="Title of the project :"
             id="title"
+            type="text"
             placeholder="e.g., Optimizing the Real-Time Data Pipeline"
           />
         </div>
@@ -22,15 +23,15 @@ export function StoryForm() {
           {/* We will replace this with the Tiptap editor later */}
           <label
             htmlFor="content"
-            className="block text-sm font-medium text-gray-200"
+            className="block text-md font-medium mb-2 text-gray-200"
           >
-            Content
+            Content :
           </label>
           <textarea
             id="content"
             name="content"
             rows={10}
-            className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className="flex w-full rounded-lg border-2 border-white/40 p-6 text-base text-white placeholder:text-neutral-400 outline-none"
             placeholder="Describe the problem, your role, the process, and the outcome..."
             required
           />
@@ -40,7 +41,7 @@ export function StoryForm() {
           type="submit"
           className="inline-flex justify-center rounded-full brand py-2 px-4 text-sm font-medium text-white transition-all duration-150 hover:scale-105"
         >
-          Create Story
+          Next
         </button>
       </form>
     </div>
