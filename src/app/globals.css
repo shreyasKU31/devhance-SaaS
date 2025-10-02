@@ -1,0 +1,165 @@
+/* ==========================================================================
+   1. IMPORTS - All imports should be at the very top.
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Syne:wght@400..800&display=swap");
+@import "tailwindcss";
+
+/* ==========================================================================
+   2. CSS VARIABLES - All variables are defined here.
+   ========================================================================== */
+:root {
+  /* Global Colors & Fonts */
+  --bg: #0d1117;
+  --white: #ffffff;
+  --paragraph: #d1d5db;
+  --faq: #909090;
+  --gradient: linear-gradient(
+    145deg,
+    rgba(192, 132, 252, 1) 0%,
+    rgba(34, 211, 238, 1) 50%,
+    rgba(74, 222, 128, 1) 100%
+  );
+
+  /* Sidebar Light Theme Variables */
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+/* Sidebar Dark Theme Variables */
+.dark {
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+/* ==========================================================================
+   3. BASE & TYPOGRAPHY - Global styles for html, body, headings, etc.
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--white);
+  font-family: "Lexend", Helvetica, sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+}
+
+h1 {
+  font-family: "Syne", Helvetica, sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 100px;
+}
+
+h2 {
+  font-family: "Syne", Helvetica, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+h3 {
+  font-family: "Syne", Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+p {
+  font-family: "Lexend", Helvetica, sans-serif;
+  color: var(--paragraph);
+}
+
+/* Specific paragraph style for FAQ sections */
+.p {
+  color: var(--faq);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 60px;
+    line-height: 60px;
+  }
+  h2 {
+    font-size: 36px;
+    line-height: 36px;
+  }
+}
+
+@media (max-width: 360px) {
+  h1 {
+    font-size: 48px;
+    line-height: 48px;
+  }
+  h2 {
+    font-size: 28px;
+    line-height: 28px;
+  }
+}
+
+/* ==========================================================================
+   4. UTILITY CLASSES - Reusable custom classes for your project.
+   ========================================================================== */
+.brand,
+.primary {
+  background: var(--gradient);
+}
+
+.textGrad {
+  background-image: var(--gradient);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text; /* For cross-browser compatibility */
+}
+
+.borderBox {
+  border: 2px solid #0000;
+  background: linear-gradient(#131219, #131219) padding-box,
+    var(--gradient) border-box;
+}
+
+/* ==========================================================================
+   5. ANIMATIONS - Animated classes and their keyframes.
+   ========================================================================== */
+/* For animating the gradient angle */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+/* An animated version of the gradient border box */
+.box {
+  border: 2px solid #0000;
+  background: linear-gradient(#131219, #131219) padding-box,
+    linear-gradient(
+        var(--angle),
+        rgba(192, 132, 252, 1) 0%,
+        rgba(34, 211, 238, 1) 50%,
+        rgba(74, 222, 128, 1) 100%
+      )
+      border-box;
+  animation: 4s rotate linear infinite;
+}
