@@ -28,7 +28,7 @@ export function AppSidebar() {
     },
     {
       title: "My Stories",
-      url: "/stories",
+      url: "/story",
       icon: FileText,
     },
     {
@@ -38,7 +38,7 @@ export function AppSidebar() {
     },
     {
       title: "Settings",
-      url: "/settings",
+      url: "/setting",
       icon: Settings,
     },
   ];
