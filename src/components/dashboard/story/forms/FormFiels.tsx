@@ -1,13 +1,5 @@
 import { InputWithLabel } from "@/components/dashboard/basic/Input";
-
-interface FormFieldProps {
-  label: string;
-  name: string;
-  type?: string;
-  placeholder: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
+import { FormFieldProps } from "@/app/interfaces/inputs";
 
 function FormField({
   label,
