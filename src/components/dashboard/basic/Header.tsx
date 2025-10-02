@@ -1,7 +1,7 @@
 "use client";
 import { useUser } from "@clerk/nextjs";
 import React from "react";
-import { SparklesText } from "../ui/sparkles-text";
+import { SparklesText } from "../../ui/sparkles-text";
 
 const Header = () => {
   const { user } = useUser();
