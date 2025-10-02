@@ -83,3 +83,15 @@ p {
   color: transparent;
   background-clip: text;
 }
+
+.borderBox {
+  border: 2px solid #0000;
+  background: linear-gradient(#131219, #131219) padding-box,
+    linear-gradient(
+        145deg,
+        rgba(192, 132, 252, 1) 0%,
+        rgba(34, 211, 238, 1) 50%,
+        rgba(74, 222, 128, 1) 100%
+      )
+      border-box;
+}

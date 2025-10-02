@@ -67,7 +67,7 @@ const Hero = () => {
         />
         <Buttons
           text="View a Demo Project"
-          style="relative m-auto bg-gray-900 text-white rounded-full px-8 py-4 font-semibold max-md:px-4 max-md:text-xs border-2"
+          style="relative borderBox m-auto bg-gray-900 text-white rounded-full px-8 py-4 font-semibold max-md:px-4 max-md:text-xs border-2"
           href="/sign-in"
         />
       </motion.div>
