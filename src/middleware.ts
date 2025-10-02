@@ -2,18 +2,30 @@ import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const isPublicRoute = createRouteMatcher(["/", "/sign-in(.*)", "/sign-up(.*)"]);
+// --- Define your route matchers ---
+const isPublicRoute = createRouteMatcher([
+  "/",
+  "/sign-in(.*)",
+  "/sign-up(.*)",
+  "/api/webhooks(.*)", // Make all webhook routes public
+]);
+
+const isProtectedRoute = createRouteMatcher([
+  "/dashboard(.*)",
+  "/stories(.*)",
+  "/settings(.*)",
+]);
 
 export default clerkMiddleware((auth, req: NextRequest) => {
-  // First, handle authentication
-  if (!isPublicRoute(req)) {
+  // --- 1. Handle Authentication for Protected Routes ---
+  if (isProtectedRoute(req)) {
     auth.protect();
   }
 
-  // Create a response object to add headers
-  const res = NextResponse.next();
+  // --- 2. Skip Prisma checks here (Edge cannot run Prisma) ---
 
-  // Add your CORS headers
+  // --- 3. Handle CORS ---
+  const res = NextResponse.next();
   res.headers.set("Access-Control-Allow-Origin", "*");
   res.headers.set(
     "Access-Control-Allow-Methods",
@@ -24,12 +36,10 @@ export default clerkMiddleware((auth, req: NextRequest) => {
     "Content-Type, Authorization"
   );
 
-  // Handle OPTIONS requests for pre-flight checks
   if (req.method === "OPTIONS") {
     return new NextResponse(null, { status: 204, headers: res.headers });
   }
 
-  // Return the response with the added headers
   return res;
 });
 

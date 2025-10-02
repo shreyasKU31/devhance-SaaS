@@ -1,8 +1,19 @@
-import React from "react";
+import { db } from "@/lib/db";
+import { notFound } from "next/navigation";
 
-const page = async ({ params }: { params: { username: string } }) => {
+const UsernamePage = async ({ params }: { params: { username: string } }) => {
   const { username } = await params;
-  return <div>{username || "User"}</div>;
+
+  // Check DB
+  const user = await db.user.findFirst({
+    where: { username },
+  });
+
+  if (!user) {
+    notFound(); // Will render Next.js 404 page
+  }
+
+  return <div>{username}</div>;
 };
 
-export default page;
+export default UsernamePage;
