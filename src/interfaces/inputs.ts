@@ -24,3 +24,9 @@ export interface TagInputFieldProps {
   // The onChange handler passes the entire updated array back
   onChange: (name: string, tags: string[]) => void;
 }
+
+export interface ImageUploadFieldProps {
+  label: string;
+  name: string;
+  handleImageUpload: (name: string, url: string) => void;
+}
