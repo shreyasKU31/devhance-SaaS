@@ -1,5 +1,5 @@
 import React from "react";
-import { TextareaField } from "@/app/interfaces/inputs";
+import { TextareaField } from "@/interfaces/inputs";
 
 const TextAreaField = ({
   label,
@@ -18,7 +18,7 @@ const TextAreaField = ({
         name={name}
         value={value}
         onChange={onChange}
-        className="w-1/3 border-2 border-gray-700 p-4 rounded-lg"
+        className="w-full border-2 border-gray-700 p-4 rounded-lg"
         placeholder={placeholder}
         rows={rows}
       />

@@ -1,5 +1,5 @@
 import { InputWithLabel } from "@/components/dashboard/basic/Input";
-import { FormFieldProps } from "@/app/interfaces/inputs";
+import { FormFieldProps } from "@/interfaces/inputs";
 
 function FormField({
   label,
