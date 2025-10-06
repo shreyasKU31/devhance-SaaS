@@ -1,8 +1,6 @@
 import React from "react";
 import ImageUploadField from "../forms/ImageUploadField";
 import { StoryFormData } from "@/interfaces/formData";
-import { StepProps } from "@/interfaces/step";
-import { ImageUploadFieldProps } from "@/interfaces/inputs";
 
 import { HandleImageUpload } from "@/interfaces/step";
 
