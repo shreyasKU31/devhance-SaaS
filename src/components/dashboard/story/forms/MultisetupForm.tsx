@@ -53,7 +53,7 @@ function MultiStepForm({
           style={{
             transform: `translateX(${-currentStep * 100}%)`,
             display: "flex",
-            width: `${steps.length * 100}%`,
+            width: `100%`,
           }}
         >
           {steps.map((step, index) => (

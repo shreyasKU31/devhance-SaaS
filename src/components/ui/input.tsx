@@ -25,7 +25,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <input
           type={type}
           className={cn(
-            "flex w-1/3 rounded-lg border-2 border-white/40 p-4 text-base text-white placeholder:text-neutral-400 outline-none",
+            "flex w-full rounded-lg border-2 border-gray-700 p-4 text-base text-white placeholder:text-neutral-400 outline-none",
             "disabled:cursor-not-allowed disabled:opacity-50",
             isFocused && "box",
             className
