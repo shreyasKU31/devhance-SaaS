@@ -65,7 +65,7 @@ function MultiStepForm({
   return (
     <div className="rounded-xl shadow-xl p-8 w-full">
       <h2 className="text-3xl font-bold text-white mb-8 text-center">
-        Registration Form
+        Write your story...
       </h2>
 
       <StepIndicator steps={steps} currentStep={currentStep} />
