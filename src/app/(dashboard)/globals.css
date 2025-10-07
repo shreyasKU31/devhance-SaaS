@@ -48,6 +48,7 @@
    ========================================================================== */
 html {
   scroll-behavior: smooth;
+  overflow-y: hidden;
 }
 
 body {
@@ -113,42 +114,6 @@ p {
   color: var(--paragraph);
   font-size: 14px;
   line-height: 1.618; /* Golden ratio */
-}
-
-/* Specific paragraph style for FAQ sections */
-.p {
-  color: var(--faq);
-}
-
-/* Text Size Utilities */
-.text-xs {
-  font-size: 11px;
-  line-height: 1.5;
-}
-
-.text-sm {
-  font-size: 12px;
-  line-height: 1.618;
-}
-
-.text-base {
-  font-size: 14px;
-  line-height: 1.618;
-}
-
-.text-lg {
-  font-size: 16px;
-  line-height: 1.618;
-}
-
-.text-xl {
-  font-size: 18px;
-  line-height: 1.5;
-}
-
-.text-2xl {
-  font-size: 20px;
-  line-height: 1.4;
 }
 
 /* Dashboard-specific text styles */
@@ -256,65 +221,6 @@ p {
   border: 1px solid #0000;
   background: linear-gradient(#0d1117, #0d1117) padding-box,
     var(--gradient) border-box;
-}
-
-/* Golden Ratio Spacing System (8px base unit × φ powers) */
-.spacing-xs {
-  margin-bottom: 8px;
-}
-
-.spacing-sm {
-  margin-bottom: 13px;
-}
-
-.spacing-md {
-  margin-bottom: 21px;
-}
-
-.spacing-lg {
-  margin-bottom: 34px;
-}
-
-.spacing-xl {
-  margin-bottom: 55px;
-}
-
-.spacing-2xl {
-  margin-bottom: 89px;
-}
-
-/* Padding variants */
-.p-xs {
-  padding: 8px;
-}
-
-.p-sm {
-  padding: 13px;
-}
-
-.p-md {
-  padding: 21px;
-}
-
-.p-lg {
-  padding: 34px;
-}
-
-/* Gap variants for flexbox/grid */
-.gap-xs {
-  gap: 8px;
-}
-
-.gap-sm {
-  gap: 13px;
-}
-
-.gap-md {
-  gap: 21px;
-}
-
-.gap-lg {
-  gap: 34px;
 }
 
 /* ==========================================================================
