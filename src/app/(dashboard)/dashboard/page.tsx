@@ -1,18 +1,17 @@
 // app/(dashboard)/dashboard/page.tsx
+
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
 import Link from "next/link";
+import LoadingSpinner from "@/components/ui/LoadingSpinner";
+import { Suspense } from "react";
 
-export default async function DashboardPage() {
-  // Use auth() instead of useAuth() for server components
+async function DashboardContent() {
   const { userId } = await auth();
-
   if (!userId) {
     redirect("/sign-in");
   }
-
-  // Fetch user and their stories from the database
   const user = await db.user.findUnique({
     where: { clerkId: userId },
     include: {
@@ -21,12 +20,9 @@ export default async function DashboardPage() {
       },
     },
   });
-
-  // If user doesn't exist in database, you might want to create them
   if (!user) {
     redirect("/sign-in");
   }
-
   return (
     <div className="p-8">
       <div className="flex items-center justify-between">
@@ -42,7 +38,6 @@ export default async function DashboardPage() {
           </button>
         </Link>
       </div>
-
       {/* Stories section */}
       <div className="mt-10">
         <h2 className="text-2xl font-semibold">Your Stories</h2>
@@ -89,5 +84,13 @@ export default async function DashboardPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function DashboardPage() {
+  return (
+    <Suspense fallback={<LoadingSpinner />}>
+      <DashboardContent />
+    </Suspense>
   );
 }
