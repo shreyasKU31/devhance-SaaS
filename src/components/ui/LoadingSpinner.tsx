@@ -8,7 +8,7 @@ export default function LoadingSpinner({ size = 40, className = "" }) {
       role="status"
     >
       <svg
-        className="animate-spin text-indigo-500"
+        className="animate-spin text-green-300"
         width={size}
         height={size}
         viewBox="0 0 50 50"
