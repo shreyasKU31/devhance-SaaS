@@ -4,10 +4,8 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
 import Link from "next/link";
-import LoadingSpinner from "@/components/ui/LoadingSpinner";
-import { Suspense } from "react";
 
-async function DashboardContent() {
+async function DashboardPage() {
   const { userId } = await auth();
   if (!userId) {
     redirect("/sign-in");
@@ -87,10 +85,4 @@ async function DashboardContent() {
   );
 }
 
-export default function DashboardPage() {
-  return (
-    <Suspense fallback={<LoadingSpinner />}>
-      <DashboardContent />
-    </Suspense>
-  );
-}
+export default DashboardPage;
