@@ -34,14 +34,14 @@ model User {
 model Story {
   id          String    @id @default(auto()) @map("_id") @db.ObjectId
   title       String
-  // Storing content as a JSON object is ideal for block-based editors like Tiptap
-  content     Json?
+  content     Json?     // For storing structured data like { what, when, why, how, userBenefit }
+  projectImage String?
+  techStack    String?
   isPublished Boolean   @default(false)
-
+  slug        String?   @unique
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
 
-  // Relation to User model
   author      User      @relation(fields: [authorId], references: [id])
   authorId    String    @db.ObjectId
 }
