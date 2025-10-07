@@ -241,10 +241,10 @@ const StoryPage = async ({ params }: StoryPageProps) => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-400/10 via-cyan-400/10 to-green-400/10 rounded-2xl blur-xl"></div>
               <div className="relative bg-slate-900/40 backdrop-blur-sm rounded-2xl p-8 border border-slate-800/50">
-                <h3 className="text-2xl font-bold font-['Syne'] text-white mb-6 flex items-center gap-2">
+                <h2 className="text-2xl font-bold font-['Syne'] text-white mb-6 flex items-center gap-2">
                   <span className="w-1.5 h-8 bg-gradient-to-b from-purple-400 via-cyan-400 to-green-400 rounded-full"></span>
                   Tech Stack & Tools
-                </h3>
+                </h2>
                 <div className="flex flex-wrap gap-3">
                   {techStackArray.map((tech, index) => (
                     <span
@@ -265,7 +265,7 @@ const StoryPage = async ({ params }: StoryPageProps) => {
         <div className="pt-8">
           <a
             href={`/${username}`}
-            className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-400 via-cyan-400 to-green-400 text-slate-950 rounded-xl font-semibold text-lg overflow-hidden transition-all hover:shadow-2xl hover:shadow-purple-400/50 hover:scale-105"
+            className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 brand text-white rounded-xl font-semibold text-lg overflow-hidden transition-all hover:shadow-2xl hover:shadow-purple-400/50 hover:scale-105"
           >
             <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform"></span>
             <span className="relative">
