@@ -1,0 +1,440 @@
+/* ==========================================================================
+   1. IMPORTS - All imports should be at the very top.
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Syne:wght@400..800&display=swap");
+@import "tailwindcss";
+
+/* ==========================================================================
+   2. CSS VARIABLES - All variables are defined here.
+   ========================================================================== */
+:root {
+  /* Global Colors & Fonts */
+  --bg: #0d1117;
+  --white: #ffffff;
+  --paragraph: #d1d5db;
+  --faq: #909090;
+  --gradient: linear-gradient(
+    145deg,
+    rgba(192, 132, 252, 1) 0%,
+    rgba(34, 211, 238, 1) 50%,
+    rgba(74, 222, 128, 1) 100%
+  );
+
+  /* Sidebar Light Theme Variables */
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+/* Sidebar Dark Theme Variables */
+.dark {
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+/* ==========================================================================
+   3. BASE & TYPOGRAPHY - Dashboard-optimized Golden Ratio Typography
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--white);
+  font-family: "Lexend", Helvetica, sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 14px; /* Reduced base size for dashboard */
+}
+
+/* Dashboard Typography - Golden Ratio Scale (Base: 14px, Scale: 1.618) */
+
+h1 {
+  font-family: "Syne", Helvetica, sans-serif;
+  font-size: 32px; /* Dashboard page titles */
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-family: "Syne", Helvetica, sans-serif;
+  font-size: 24px; /* Section headers - 32 / 1.33 */
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-family: "Syne", Helvetica, sans-serif;
+  font-size: 18px; /* Card titles - 24 / 1.33 */
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+h4 {
+  font-family: "Syne", Helvetica, sans-serif;
+  font-size: 16px; /* Sub-section headers */
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+h5 {
+  font-family: "Syne", Helvetica, sans-serif;
+  font-size: 14px; /* Small headers */
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+h6 {
+  font-family: "Syne", Helvetica, sans-serif;
+  font-size: 12px; /* Micro headers */
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p {
+  font-family: "Lexend", Helvetica, sans-serif;
+  color: var(--paragraph);
+  font-size: 14px;
+  line-height: 1.618; /* Golden ratio */
+}
+
+/* Specific paragraph style for FAQ sections */
+.p {
+  color: var(--faq);
+}
+
+/* Text Size Utilities */
+.text-xs {
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.text-sm {
+  font-size: 12px;
+  line-height: 1.618;
+}
+
+.text-base {
+  font-size: 14px;
+  line-height: 1.618;
+}
+
+.text-lg {
+  font-size: 16px;
+  line-height: 1.618;
+}
+
+.text-xl {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.text-2xl {
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+/* Dashboard-specific text styles */
+.text-label {
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.text-caption {
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--faq);
+}
+
+.text-metric {
+  font-family: "Syne", Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Responsive Typography - Dashboard Optimized */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 13px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  h4 {
+    font-size: 14px;
+  }
+  p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 22px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  h3 {
+    font-size: 14px;
+  }
+}
+
+/* ==========================================================================
+   4. UTILITY CLASSES - Reusable custom classes for your project.
+   ========================================================================== */
+.brand,
+.primary {
+  background: var(--gradient);
+}
+
+.textGrad {
+  background-image: var(--gradient);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text; /* For cross-browser compatibility */
+}
+
+.borderBox {
+  border: 2px solid #0000;
+  background: linear-gradient(#131219, #131219) padding-box,
+    var(--gradient) border-box;
+}
+
+/* Dashboard-specific utilities */
+.card-gradient-border {
+  border: 1px solid #0000;
+  background: linear-gradient(#0d1117, #0d1117) padding-box,
+    var(--gradient) border-box;
+  border-radius: 12px;
+}
+
+.hover-gradient-border {
+  transition: all 0.3s ease;
+}
+
+.hover-gradient-border:hover {
+  border: 1px solid #0000;
+  background: linear-gradient(#0d1117, #0d1117) padding-box,
+    var(--gradient) border-box;
+}
+
+/* Golden Ratio Spacing System (8px base unit × φ powers) */
+.spacing-xs {
+  margin-bottom: 8px;
+}
+
+.spacing-sm {
+  margin-bottom: 13px;
+}
+
+.spacing-md {
+  margin-bottom: 21px;
+}
+
+.spacing-lg {
+  margin-bottom: 34px;
+}
+
+.spacing-xl {
+  margin-bottom: 55px;
+}
+
+.spacing-2xl {
+  margin-bottom: 89px;
+}
+
+/* Padding variants */
+.p-xs {
+  padding: 8px;
+}
+
+.p-sm {
+  padding: 13px;
+}
+
+.p-md {
+  padding: 21px;
+}
+
+.p-lg {
+  padding: 34px;
+}
+
+/* Gap variants for flexbox/grid */
+.gap-xs {
+  gap: 8px;
+}
+
+.gap-sm {
+  gap: 13px;
+}
+
+.gap-md {
+  gap: 21px;
+}
+
+.gap-lg {
+  gap: 34px;
+}
+
+/* ==========================================================================
+   5. ANIMATIONS - Animated classes and their keyframes.
+   ========================================================================== */
+/* For animating the gradient angle */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+/* An animated version of the gradient border box */
+.box {
+  border: 2px solid #0000;
+  background: linear-gradient(#131219, #131219) padding-box,
+    linear-gradient(
+        var(--angle),
+        rgba(192, 132, 252, 1) 0%,
+        rgba(34, 211, 238, 1) 50%,
+        rgba(74, 222, 128, 1) 100%
+      )
+      border-box;
+  animation: 4s rotate linear infinite;
+}
+
+/* Pulse animation for metrics/stats */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(192, 132, 252, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.4);
+  }
+}
+
+.pulse-gradient {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   6. DASHBOARD COMPONENT STYLES
+   ========================================================================== */
+
+/* Scrollbar styling for dashboard */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    145deg,
+    rgba(192, 132, 252, 0.5),
+    rgba(34, 211, 238, 0.5)
+  );
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    145deg,
+    rgba(192, 132, 252, 0.8),
+    rgba(34, 211, 238, 0.8)
+  );
+}
+
+/* Selection color */
+::selection {
+  background: rgba(192, 132, 252, 0.3);
+  color: var(--white);
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid rgba(192, 132, 252, 0.5);
+  outline-offset: 2px;
+}
+
+/* Disabled state */
+:disabled,
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Loading state */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
