@@ -20,44 +20,41 @@ interface StoryPageProps {
  */
 const StoryPage = async ({ params }: StoryPageProps) => {
   // 1. Check authentication status
-  const { userId } = await auth();
-  const isLoggedIn = !!userId;
-
-  // 2. Await params (required in Next.js 15+)
-  const { username, slug } = await params;
-
-  // 3. Find the author by their username first. This is a robust pattern.
-  const author = await db.user.findUnique({
-    where: { username },
-  });
-
-  // If the author doesn't exist, the story can't exist. Show a 404 page.
-  if (!author) {
-    notFound();
+  let userId, isLoggedIn, username, slug, author, story, content;
+  try {
+    ({ userId } = await auth());
+    isLoggedIn = !!userId;
+    ({ username, slug } = await params);
+    author = await db.user.findUnique({ where: { username } });
+    if (!author) notFound();
+    story = await db.story.findFirst({
+      where: {
+        authorId: author.id,
+        slug: slug,
+        isPublished: true,
+      },
+    });
+    if (!story) notFound();
+    content = story.content as {
+      what?: string;
+      when?: string;
+      why?: string;
+      how?: string;
+      userBenefit?: string;
+    };
+  } catch (e) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[60vh] text-center">
+        <h2 className="text-2xl font-bold text-red-500 mb-2">Error loading story</h2>
+        <p className="text-gray-400 mb-4">This story could not be loaded. It may not exist or there was a server error.</p>
+        <a href="/" className="text-indigo-500 underline">Go Home</a>
+      </div>
+    );
   }
-
-  // 4. Find the story using the author's ID and the story's slug.
-  const story = await db.story.findFirst({
-    where: {
-      authorId: author.id,
-      slug: slug,
-      isPublished: true, // Only show published stories
-    },
-  });
-
-  // If no story is found, show a 404 page.
-  if (!story) {
-    notFound();
-  }
-
-  // 5. Safely parse the JSON content from the database.
-  const content = story.content as {
-    what?: string;
-    when?: string;
-    why?: string;
-    how?: string;
-    userBenefit?: string;
-  };
+  // ...existing code...
+  // (rest of the file remains unchanged)
+  // ...existing code...
+  // (all rendering logic below remains unchanged)
 
   // 6. Handle techStack - it's a string in the schema, so we need to split it
   const techStackArray = story.techStack
